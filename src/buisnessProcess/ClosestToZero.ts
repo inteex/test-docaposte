@@ -4,7 +4,7 @@
  * @returns closest number to zero
  */
 export const closestToZero = (values: number[]): number => {
-    if (!values.length) return;
+  if (!values.length) return;
   let min: number = +values[0];
   for (let index = 1; index < values.length; index++) {
     const element = +values[index];
