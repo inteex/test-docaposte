@@ -17,8 +17,12 @@ describe("closestToZero", () => {
     const result = closestToZero([4]);
     expect(result).toEqual(4);
   });
-  it("should not throw an error", () => {
+  it("should return 0 if empty array", () => {
     const result = closestToZero([]);
-    expect(result).toBeUndefined;
+    expect(result).toEqual(0);
+  });
+  it("should return 0 if undefiend", () => {
+    const result = closestToZero(undefined);
+    expect(result).toEqual(0);
   });
 });

@@ -4,8 +4,9 @@
  * @returns closest number to zero
  */
 export const closestToZero = (values: number[]): number => {
-  if (!values.length) return;
-  if (values.length === 1) return values[0];
+  // undefiend or empty
+  if (!values || !values.length) return 0;
+  else if (values.length === 1) return values[0];
   let min: number = +values[0];
   for (let index = 1; index < values.length; index++) {
     const element = +values[index];
