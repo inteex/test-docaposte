@@ -3,7 +3,7 @@ import closestToZeroRouter, { basePath } from "./routes/closestToZeroRoutes";
 
 const routes: Router = Router();
 
-routes.get("/", (req, res) => {
+routes.get("/", (_, res) => {
   return res.json({ message: "Hi there :)!" });
 });
 

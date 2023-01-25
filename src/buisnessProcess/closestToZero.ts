@@ -5,6 +5,7 @@
  */
 export const closestToZero = (values: number[]): number => {
   if (!values.length) return;
+  if (values.length === 1) return values[0];
   let min: number = +values[0];
   for (let index = 1; index < values.length; index++) {
     const element = +values[index];
@@ -13,7 +14,3 @@ export const closestToZero = (values: number[]): number => {
   }
   return min;
 };
-
-// console.log(closestToZero([9, 4, 42]));
-// console.log(closestToZero([15, 7, 9, -6, 10, -1, 18]));
-// console.log(closestToZero([4, 2, 3, -2]));

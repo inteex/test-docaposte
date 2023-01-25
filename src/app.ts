@@ -7,10 +7,11 @@ import swaggerJSDoc from "swagger-jsdoc";
 // @ts-ignore
 import swaggerUi from "swagger-ui-express";
 import { swaggerOptions } from "./swagger/config";
+import { Express } from "express-serve-static-core";
 
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 class App {
-  public server;
+  public server: Express;
 
   constructor() {
     this.server = express();

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { closestToZero } from "../buisnessProcess/ClosestToZero";
+import { closestToZero } from "../buisnessProcess/closestToZero";
 import * as validator from "../validation/closestToZeroValidation";
 
 export const basePath = "/closest-to-zero";

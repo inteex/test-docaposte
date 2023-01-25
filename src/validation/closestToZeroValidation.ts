@@ -10,14 +10,13 @@ export const closestToZero = (
   res: Response,
   next: NextFunction
 ) => {
-  // console.log({req, res});
   const { error, value } = schema.validate(req.body);
 
   if (error) {
-    // on fail return comma separated errors
-    next(`Validation error: ${error.details.map((x) => x.message).join(", ")}`);
+    res.status(422).json({
+      message: error.details.map((x) => x.message).join(", "),
+    });
   } else {
-    // on success replace req.body with validated value and trigger next middleware function
     req.body = value;
     next();
   }
