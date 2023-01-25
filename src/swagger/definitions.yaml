@@ -1,0 +1,40 @@
+openapi: 3.0.3
+tags:
+  - name: closest-to-zero
+    description: find the closest number to zero
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+paths:
+  /closest-to-zero:
+    post:
+      tags:
+        - closest-to-zero
+      requestBody:
+        description: Example of values to send for the calculation of the closest number to zero
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClosestToZero'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result:
+                    type: integer
+components:
+  schemas:
+    ClosestToZero:
+      type: object
+      properties:
+        values:
+          type: array
+          items:
+            type: integer
+          example: [1, 2, 3, -1]
+        
